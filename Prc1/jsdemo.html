@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jsdemo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    <script>
+
+        console.log('jsdemo');
+        /****************/
+        
+        function myPrivateFunction() {
+            var z = 10;
+            function getValueZ() {
+                return z;
+            }
+            return getValueZ;
+        }
+        var obj = myPrivateFunction();
+
+        console.log(obj)  ;  // funtion body
+        console.log(obj())  ;  // z value
+
+    /************************/
+    function userInfo(fname, lname){
+        var FirstName = fname;
+        var lastname = lname;
+        function print(){
+            console.log(FirstName + ' ' + lastname);
+        }
+        return print;
+        
+    }
+
+    var p1 = userInfo('kiran', 'janwade');
+    p1();
+
+    var p2 = userInfo('piyush', 'khedkar');
+    p2();
+
+
+    //const Class
+    class userinfos{
+        constructor(fname, lname){
+            this.FirstName= fname;
+            this.lastname = lname;
+        }
+        print(){
+            console.log(this.FirstName + ' ' + this.lastname)
+        }
+    }
+
+    var c1 = new userinfos ('k', 's')
+    c1.print();
+
+    </script>
+</body>
+</html>
